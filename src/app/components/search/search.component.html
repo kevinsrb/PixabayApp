@@ -1,0 +1,36 @@
+<div class="card">
+    <div class="card-header">
+      PixabayApp
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Busque una imagen</h5>
+      
+      <div class="input-group">
+        <input ID="search" type="text" class="form-control" name="query" [(ngModel)]="query" (keyup.enter)="searchImages(query)" maxlength="100" />  
+        <span class="input-group-btn">
+          <button id="findImages" class="btn btn-primary" type="button" (click)="searchImages(query)"> 
+            Buscar
+          </button>
+        </span>
+      </div>
+      <br>
+      <div class="form-group">
+        <p>Categoria:</p>
+        <select name="miselect" [(ngModel)]="seleccionado" (ngModelChange)="findCategory($event)" class="form-control" style="width: 30%!important;">
+            <option [value]="item" *ngFor="let item of lista">{{item}}</option>
+        </select>
+        </div>
+    </div>
+  </div>
+
+
+<app-tarjetas [items]="[images,imagesFound]"></app-tarjetas>
+
+<div *ngIf="b404">
+  <h3>No se encontraron imagenes :)</h3>
+</div>
+
+
+
+
+

@@ -1,0 +1,14 @@
+<div *ngIf="items[1]" class="card-columns m-5 animated fadeIn">
+    <div *ngFor="let image of items[0]" class="card puntero">
+          <img class="card-img-top" [src]="image.webformatURL " alt="Card image cap">
+          <div class="card-body">
+              <h5 class="card-title">User: {{ image.user }}</h5>
+              <div class="card-text">
+                <p>Tags: {{ image.tags }}</p>
+                <p>Vistas: {{ image.views }}</p>
+                <p>Likes: {{ image.likes }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
